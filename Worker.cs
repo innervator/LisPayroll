@@ -20,6 +20,10 @@ namespace Lis
 
     }
 
+    public class Junior : Worker
+    {
+
+    }
 
     public sealed class Manager:Worker
     {
@@ -29,9 +33,33 @@ namespace Lis
         }
     }
 
+    public sealed class Senior:Worker
+    {
+        public Senior()
+        {
+            this.SalaryPercentage = base.SalaryPercentage * 2;
+        }
+    }
+
     public sealed class Expert:Worker
     {
         public Expert()
+        {
+            this.SalaryPercentage = base.SalaryPercentage * 2;
+        }
+    }
+
+    public sealed class DescionMaker:Worker
+    {
+        public DescionMaker()
+        {
+            this.SalaryPercentage = base.SalaryPercentage * 2;
+        }
+    }
+
+    public sealed class AtRisk:Worker
+    {
+        public AtRisk(int RiskPercentage)
         {
             this.SalaryPercentage = base.SalaryPercentage * 2;
         }
