@@ -7,63 +7,95 @@ namespace Lis
         {
         public class Worker
         {
-            private double _salary = 1;
+            public string Name;
+            public int MonthlyHours;
+            private double salaryPercentage = 1;
+            
+            public double Salary = 0;
             public virtual double SalaryPercentage
             { 
                 get 
                 { 
-                return _salary; 
+                return salaryPercentage; 
                 } 
                 set 
                 { 
-                _salary = value; 
+                salaryPercentage = value; 
                 } 
             }
+
+            public Worker(string Name, int MonthlyHours)
+            {
+                this.Name = Name;
+                this.MonthlyHours = MonthlyHours;
+                this.Salary = this.MonthlyHours * this.SalaryPercentage;
+
+            }
+
+             
 
         }
 
         public class Junior : Worker
         {
+            public Junior(string Name, int MonthlyHours):base(Name, MonthlyHours)
+            {
+                this.Name = Name;
+                this.MonthlyHours = MonthlyHours;
 
+            }
         }
 
         public sealed class Manager:Worker
         {
-            public Manager()
+            public Manager(string Name, int MonthlyHours):base(Name, MonthlyHours)
             {
-                this.SalaryPercentage = base.SalaryPercentage * 1.5;
+                this.Name = Name;
+                this.MonthlyHours = MonthlyHours;
+                this.SalaryPercentage = base.SalaryPercentage * 5;
+                this.Salary = this.MonthlyHours * this.SalaryPercentage;
+
             }
         }
 
         public sealed class Senior:Worker
         {
-            public Senior()
+            public Senior(string Name, int MonthlyHours):base(Name, MonthlyHours)
             {
+                this.Name = Name;
+                this.MonthlyHours = MonthlyHours;
                 this.SalaryPercentage = base.SalaryPercentage * 2;
+
             }
         }
 
-        public sealed class Expert:Worker
+        public class Expert:Worker
         {
-            public Expert()
+            public Expert(string Name, int MonthlyHours):base(Name, MonthlyHours)
             {
-                this.SalaryPercentage = base.SalaryPercentage * 2;
+                this.Name = Name;
+                this.MonthlyHours = MonthlyHours;
+                this.SalaryPercentage = base.SalaryPercentage * 3;
             }
         }
 
         public sealed class DescionMaker:Worker
         {
-            public DescionMaker()
+            public DescionMaker(string Name, int MonthlyHours):base(Name, MonthlyHours)
             {
-                this.SalaryPercentage = base.SalaryPercentage * 2;
+                this.Name = Name;
+                this.MonthlyHours = MonthlyHours;
+                this.SalaryPercentage = base.SalaryPercentage * 4;
             }
         }
 
         public sealed class AtRisk:Worker
         {
-            public AtRisk(int RiskPercentage)
+            public AtRisk(string Name, int MonthlyHours, int RiskPercentage):base(Name, MonthlyHours)
             {
-                this.SalaryPercentage = base.SalaryPercentage * 2;
+                this.Name = Name;
+                this.MonthlyHours = MonthlyHours;
+                this.SalaryPercentage = base.SalaryPercentage * RiskPercentage;
             }
         }
     }
