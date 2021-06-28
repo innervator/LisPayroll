@@ -1,0 +1,16 @@
+D:\libraries\mms\C#\Lis\obj\Debug\net5.0\Lis.csproj.AssemblyReference.cache
+D:\libraries\mms\C#\Lis\obj\Debug\net5.0\Lis.GeneratedMSBuildEditorConfig.editorconfig
+D:\libraries\mms\C#\Lis\obj\Debug\net5.0\Lis.AssemblyInfoInputs.cache
+D:\libraries\mms\C#\Lis\obj\Debug\net5.0\Lis.AssemblyInfo.cs
+D:\libraries\mms\C#\Lis\obj\Debug\net5.0\Lis.csproj.CoreCompileInputs.cache
+D:\libraries\mms\C#\Lis\bin\Debug\net5.0\Lis.exe
+D:\libraries\mms\C#\Lis\bin\Debug\net5.0\Lis.deps.json
+D:\libraries\mms\C#\Lis\bin\Debug\net5.0\Lis.runtimeconfig.json
+D:\libraries\mms\C#\Lis\bin\Debug\net5.0\Lis.runtimeconfig.dev.json
+D:\libraries\mms\C#\Lis\bin\Debug\net5.0\Lis.dll
+D:\libraries\mms\C#\Lis\bin\Debug\net5.0\ref\Lis.dll
+D:\libraries\mms\C#\Lis\bin\Debug\net5.0\Lis.pdb
+D:\libraries\mms\C#\Lis\obj\Debug\net5.0\Lis.dll
+D:\libraries\mms\C#\Lis\obj\Debug\net5.0\ref\Lis.dll
+D:\libraries\mms\C#\Lis\obj\Debug\net5.0\Lis.pdb
+D:\libraries\mms\C#\Lis\obj\Debug\net5.0\Lis.genruntimeconfig.cache
