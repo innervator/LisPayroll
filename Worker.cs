@@ -23,22 +23,17 @@ namespace Lis
 
     public sealed class Manager:Worker
     {
-        public override double SalaryPercentage
-        {
-            get
-            {
-                return base.SalaryPercentage;
-            }
-            set
-            {
-                if (value == null) throw new ArgumentNullException("value");
-                base.SalaryPercentage = value;
-            }
-        }
-
         public Manager()
         {
-            this.SalaryPercentage = 1.5;
+            this.SalaryPercentage = base.SalaryPercentage * 1.5;
+        }
+    }
+
+    public sealed class Expert:Worker
+    {
+        public Expert()
+        {
+            this.SalaryPercentage = base.SalaryPercentage * 2;
         }
     }
 }
