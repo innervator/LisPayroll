@@ -9,8 +9,8 @@ namespace Lis
         {
             public string Name;
             public int MonthlyHours;
+            public double SalaryPerHour = 10;
             private double salaryPercentage = 1;
-            
             public double Salary = 0;
             public virtual double SalaryPercentage
             { 
@@ -32,8 +32,6 @@ namespace Lis
 
             }
 
-             
-
         }
 
         public class Junior : Worker
@@ -48,12 +46,11 @@ namespace Lis
 
         public sealed class Manager:Worker
         {
+            
             public Manager(string Name, int MonthlyHours):base(Name, MonthlyHours)
             {
-                this.Name = Name;
-                this.MonthlyHours = MonthlyHours;
                 this.SalaryPercentage = base.SalaryPercentage * 5;
-                this.Salary = this.MonthlyHours * this.SalaryPercentage;
+                this.Salary = this.MonthlyHours * this.SalaryPercentage * this.SalaryPerHour;
 
             }
         }
@@ -62,9 +59,8 @@ namespace Lis
         {
             public Senior(string Name, int MonthlyHours):base(Name, MonthlyHours)
             {
-                this.Name = Name;
-                this.MonthlyHours = MonthlyHours;
-                this.SalaryPercentage = base.SalaryPercentage * 2;
+                this.SalaryPercentage = base.SalaryPercentage * 5;
+                this.Salary = this.MonthlyHours * this.SalaryPercentage * this.SalaryPerHour;
 
             }
         }
@@ -73,9 +69,8 @@ namespace Lis
         {
             public Expert(string Name, int MonthlyHours):base(Name, MonthlyHours)
             {
-                this.Name = Name;
-                this.MonthlyHours = MonthlyHours;
-                this.SalaryPercentage = base.SalaryPercentage * 3;
+                this.SalaryPercentage = base.SalaryPercentage * 2;
+                this.Salary = this.MonthlyHours * this.SalaryPercentage * this.SalaryPerHour;
             }
         }
 
@@ -83,9 +78,8 @@ namespace Lis
         {
             public DescionMaker(string Name, int MonthlyHours):base(Name, MonthlyHours)
             {
-                this.Name = Name;
-                this.MonthlyHours = MonthlyHours;
-                this.SalaryPercentage = base.SalaryPercentage * 4;
+                this.SalaryPercentage = base.SalaryPercentage * 2;
+                this.Salary = this.MonthlyHours * this.SalaryPercentage * this.SalaryPerHour;
             }
         }
 
@@ -93,9 +87,8 @@ namespace Lis
         {
             public AtRisk(string Name, int MonthlyHours, int RiskPercentage):base(Name, MonthlyHours)
             {
-                this.Name = Name;
-                this.MonthlyHours = MonthlyHours;
-                this.SalaryPercentage = base.SalaryPercentage * RiskPercentage;
+                this.SalaryPercentage = base.SalaryPercentage * 2;
+                this.Salary = this.MonthlyHours * this.SalaryPercentage * this.SalaryPerHour * (RiskPercentage/100+1);
             }
         }
     }

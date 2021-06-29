@@ -60,8 +60,7 @@ namespace Lis
             {
                  public Nurse(string Name, int MonthlyHours):base(Name, MonthlyHours)
                 {
-                    this.Name = Name;
-                    this.MonthlyHours = MonthlyHours;
+                    this.Salary = this.MonthlyHours * this.SalaryPercentage * this.SalaryPerHour;
                 }
             }
 
@@ -69,8 +68,8 @@ namespace Lis
             {
                 public PrimeNurse(string Name, int MonthlyHours):base(Name, MonthlyHours)
                 {
-                    this.Name = Name;
-                    this.MonthlyHours = MonthlyHours;
+                    this.SalaryPercentage = base.SalaryPercentage * 2;
+                    this.Salary = this.MonthlyHours * this.SalaryPercentage * this.SalaryPerHour;
                 }
                 
             }
