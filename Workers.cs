@@ -56,23 +56,15 @@ namespace Lis
         }
         namespace Professional
         {
-            class Nurse:Junior
+            class PrimeNurse:Worker
             {
-                 public Nurse(string Name, int MonthlyHours):base(Name, MonthlyHours)
+                 public PrimeNurse(string Name, int MonthlyHours):base(Name, MonthlyHours)
                 {
-                    this.Salary = this.MonthlyHours * this.SalaryPercentage * this.SalaryPerHour;
+                    this.Salary = this.MonthlyHours * Manager.SalaryPercentageAddition * DescionMaker.SalaryPercentageAddition * this.SalaryPerHour; 
+
                 }
             }
 
-            class PrimeNurse : Expert
-            {
-                public PrimeNurse(string Name, int MonthlyHours):base(Name, MonthlyHours)
-                {
-                    this.SalaryPercentage = base.SalaryPercentage * 2;
-                    this.Salary = this.MonthlyHours * this.SalaryPercentage * this.SalaryPerHour;
-                }
-                
-            }
         }
     }
 }

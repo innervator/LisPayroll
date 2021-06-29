@@ -36,7 +36,7 @@ namespace Lis
             //     }
             // }
 
-            Senior El = new Senior(Name:"El",MonthlyHours:5);
+            PrimeNurse El = new PrimeNurse(Name:"El",MonthlyHours:2);
         //    PrimeNurse El = new PrimeNurse(Name:"Aie",MonthlyHours:5);
             Console.WriteLine(El.Salary);
         //    Console.WriteLine(Ae.SalaryPercentage);

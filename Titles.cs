@@ -12,6 +12,7 @@ namespace Lis
             public double SalaryPerHour = 10;
             private double salaryPercentage = 1;
             public double Salary = 0;
+            public double SalaryPercentageAddition = 1;
             public virtual double SalaryPercentage
             { 
                 get 
@@ -46,11 +47,12 @@ namespace Lis
 
         public sealed class Manager:Worker
         {
+            public new static double SalaryPercentageAddition = 5;
             
             public Manager(string Name, int MonthlyHours):base(Name, MonthlyHours)
             {
-                this.SalaryPercentage = base.SalaryPercentage * 5;
-                this.Salary = this.MonthlyHours * this.SalaryPercentage * this.SalaryPerHour;
+                // this.SalaryPercentage = base.SalaryPercentage * 5;
+                // this.Salary = this.MonthlyHours * this.SalaryPercentage * this.SalaryPerHour;
 
             }
         }
@@ -76,9 +78,10 @@ namespace Lis
 
         public sealed class DescionMaker:Worker
         {
+            public new static double SalaryPercentageAddition = 2;
             public DescionMaker(string Name, int MonthlyHours):base(Name, MonthlyHours)
             {
-                this.SalaryPercentage = base.SalaryPercentage * 2;
+                this.SalaryPercentage = base.SalaryPercentage * 3;
                 this.Salary = this.MonthlyHours * this.SalaryPercentage * this.SalaryPerHour;
             }
         }
