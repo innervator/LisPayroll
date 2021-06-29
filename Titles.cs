@@ -39,9 +39,6 @@ namespace Lis
         {
             public Junior(string Name, int MonthlyHours):base(Name, MonthlyHours)
             {
-                this.Name = Name;
-                this.MonthlyHours = MonthlyHours;
-
             }
         }
 
@@ -51,37 +48,53 @@ namespace Lis
             
             public Manager(string Name, int MonthlyHours):base(Name, MonthlyHours)
             {
-                // this.SalaryPercentage = base.SalaryPercentage * 5;
-                // this.Salary = this.MonthlyHours * this.SalaryPercentage * this.SalaryPerHour;
 
             }
         }
 
         public sealed class Senior:Worker
         {
+            public new static double SalaryPercentageAddition = 1.05;
             public Senior(string Name, int MonthlyHours):base(Name, MonthlyHours)
             {
-                this.SalaryPercentage = base.SalaryPercentage * 5;
-                this.Salary = this.MonthlyHours * this.SalaryPercentage * this.SalaryPerHour;
-
             }
         }
 
         public class Expert:Worker
         {
+            public new static double SalaryPercentageAddition = 1.3;
             public Expert(string Name, int MonthlyHours):base(Name, MonthlyHours)
             {
-                this.SalaryPercentage = base.SalaryPercentage * 2;
-                this.Salary = this.MonthlyHours * this.SalaryPercentage * this.SalaryPerHour;
             }
         }
 
         public sealed class DescionMaker:Worker
         {
+            private int monthlyHours;
+
             public new static double SalaryPercentageAddition = 2;
+            public int MonthlyHours
+            {
+                get
+                {
+                    return monthlyHours;
+                }
+                set
+                {
+                    monthlyHours = value;
+                    if(monthlyHours > 50)
+                    {
+                        SalaryPercentageAddition = 200*2;
+                        monthlyHours=1;
+                    }
+
+                }
+            }
+
             public DescionMaker(string Name, int MonthlyHours):base(Name, MonthlyHours)
             {
                 this.SalaryPercentage = base.SalaryPercentage * 3;
+                this.MonthlyHours = MonthlyHours;
                 this.Salary = this.MonthlyHours * this.SalaryPercentage * this.SalaryPerHour;
             }
         }

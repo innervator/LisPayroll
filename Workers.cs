@@ -9,14 +9,22 @@ namespace Lis
     {
         namespace Management
         {
-            class Cleaner
+            class Cleaner:Worker
             {
-                
+                public Cleaner(string Name, int MonthlyHours):base(Name, MonthlyHours)
+                {
+                    this.Salary = this.MonthlyHours * Senior.SalaryPercentageAddition * Expert.SalaryPercentageAddition * this.SalaryPerHour; 
+
+                }
             }
 
             class PoisionCleaner : Cleaner
             {
-                
+                public PoisionCleaner(string Name, int MonthlyHours):base(Name, MonthlyHours)
+                {
+                    this.Salary = this.MonthlyHours * Senior.SalaryPercentageAddition * Expert.SalaryPercentageAddition * this.SalaryPerHour; 
+
+                }
             }
 
             class MasterCleaner
@@ -60,7 +68,7 @@ namespace Lis
             {
                  public PrimeNurse(string Name, int MonthlyHours):base(Name, MonthlyHours)
                 {
-                    this.Salary = this.MonthlyHours * Manager.SalaryPercentageAddition * DescionMaker.SalaryPercentageAddition * this.SalaryPerHour; 
+                    this.Salary = this.MonthlyHours * Senior.SalaryPercentageAddition * Expert.SalaryPercentageAddition * this.SalaryPerHour; 
 
                 }
             }
